@@ -1,0 +1,48 @@
+.logo img {
+	margin: 10%;
+}
+
+.socialNetworks img {
+	margin: 7px;	
+}
+
+hr {
+	border-color: navy;
+	border-width: 2px;
+}
+
+.personalInfo {
+	color: #00008B;
+	line-height: 1.6;
+}
+
+.main {
+	line-height: 1.7;
+	padding-bottom: 20px;
+}
+
+div.myItem {
+	margin-top: 10px;
+}
+
+p#certificates {
+	margin-bottom: 4px;
+}
+
+div > p:first-child {
+ text-indent: 0;
+}
+
+p {
+	text-indent: 24px;
+}
+
+ul {
+	padding-left: 0px;
+	padding-top: 5px;
+}
+
+.list-group-item {
+	padding: 3px;
+	max-width: 300px;
+}
