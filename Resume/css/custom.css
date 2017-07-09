@@ -10,7 +10,7 @@
 
 body {
 	font-family: 'Arimo', Arial, Georgia, Monospace;
-	font-size: 13pt;
+	font-size: calc(8px + 1vw);
 	background-image: url('http://3.bp.blogspot.com/-eyiqHjMAKS4/UIbxSX_RUfI/AAAAAAAAC3Q/t1DJyRojw9w/s1600/white_grunge_background.jpg');
 	background-color: white;
 	background-repeat: repeat-x repeat-y;
@@ -63,6 +63,7 @@ ul {
 .list-group-item {
 	padding: 3px;
 	max-width: 330px;
+	font-size: calc(8px + 0.5vw);
 }
 
 .informerWeather {
