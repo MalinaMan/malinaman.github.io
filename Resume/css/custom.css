@@ -11,9 +11,8 @@
 body {
 	font-family: 'Arimo', Arial, Georgia, Monospace;
 	font-size: calc(8px + 1vw);
-	background-image: url('http://3.bp.blogspot.com/-eyiqHjMAKS4/UIbxSX_RUfI/AAAAAAAAC3Q/t1DJyRojw9w/s1600/white_grunge_background.jpg');
+	background: url('http://3.bp.blogspot.com/-eyiqHjMAKS4/UIbxSX_RUfI/AAAAAAAAC3Q/t1DJyRojw9w/s1600/white_grunge_background.jpg') repeat;
 	background-color: white;
-	background-repeat: repeat-x repeat-y;
 }
 
 .logo img {
