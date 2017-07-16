@@ -3,9 +3,9 @@
 	
 	if ($age > 0 && is_numeric($age)) {	
 		switch (true) {
-		case ($age >= 18 && $age <= 59):
+		case ($age >= 18 && $age < 60):
 			echo "Вам еще работать и работать" . "<br>"; break;
-		case ($age > 59):
+		case ($age >= 60):
 			echo "Вам пора на пенсию" . "<br>"; break;
 		case ($age > 0 && $age < 18):
 			echo "Вам еще рано работать" . "<br>"; break;
