@@ -4,7 +4,8 @@
                     'Leonce Garfield', 'Heimo Padley', 'Hildemar Sutton', 'Merry Nash',
                     'Hollie Davenport', 'Maura Deighton', 'Ainsley Smith', 'Tokessa Twynam',
                     'Cierra Cromwell', 'Veneta Oldham', 'Damia Darby', 'Katherine Hayes'];
-    for ($i=0; $i < count($randomNames); $i++) {
+    $employee = array();
+	for ($i=0; $i < count($randomNames); $i++) {
         $employee[] = ['id' => rand(0, 100),
                        'name' => $randomNames[$i]];
     }
