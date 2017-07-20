@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  src: local('Lato'),
+		url('../fonts/Lato-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		url('../fonts/Lato-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body {
+	font-family: 'Lato', Arial, Georgia, Monospace;
+	font-size: 14px;
+	background-color: white;
+}
+
+body, p, ul, li, h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	background: #408dd2;
+	font-size: 1.1em;
+	min-height: 100px;
+	color: #043a6b;
+}
+
+.header .logo h3 {
+  display: inline-block;
+}
+
+#mt, .menuToggle {
+	display: none;
+}
+
+.menu {
+	background: #26547c;
+	height: 50px;
+}
+
+.menu .menuToggle {
+	font-size: 22px;
+	height: 50px;
+	color: ivory;
+	line-height: 50px;
+}
+
+.menu .wrapper li {
+	display: inline-block;
+	font-size: 18px;
+	margin: 0 16px 0 0;
+	line-height: 50px;
+}
+
+.menu .wrapper .menuItems a, .main .wrapper .menuBreeds a {
+	text-decoration: none;
+}
+
+.main .wrapper .menuBreeds li {
+	display: block;
+	font-size: 16px;
+	margin: 7px 0 7px 0;
+}
+
+a.mainLink:link, a.mainLink:visited {
+	color: ivory;
+}
+
+a.asideLink:link, a.asideLink:visited {
+	color: indigo;
+}
+
+a.footerLink:link, a.footerLink:visited {
+	color: rgb(136, 136, 136);
+}
+
+a.mainLink:hover, a.asideLink:hover, a.footerLink:hover {
+	color: darkgrey;
+}
+
+.main .wrapper .aside {
+	margin-right: 15px;
+	min-width: 160px;
+}
+
+.rightSection {
+	margin-left: 15px;
+}
+
+@media screen and (max-width: 610px) {
+	.menuItems, .main .wrapper .aside {
+		display: none;
+	}
+	.menuToggle {
+		display: inline-block;
+	}
+	#mt:checked + .menuItems {
+		display: block;
+	}
+	.menu .wrapper li {
+		display: block;
+		background: black;
+	}
+	.menu .wrapper ul {
+		background: darkgrey;
+	}
+	a.mainLink:link, a.mainLink:visited {
+		color: black;
+	}
+	a:hover {
+		color: darkgrey;
+	}
+}
+
+.main {
+	min-height: 395px;
+	background: white;
+}
+
+.main .wrapper {
+	display: flex;
+}
+
+.main .wrapper .rightSection {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.main .wrapper .rightSection figure {
+	margin: 2%;
+}
+
+.main .wrapper .rightSection figcaption {
+	font-size: 11px;
+}
+
+.footer {
+	height: 50px;
+	background: #034769;
+	line-height: 50px;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 880px;
+	min-height: inherit;
+}
