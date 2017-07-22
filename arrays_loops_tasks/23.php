@@ -10,7 +10,7 @@
 		exit();
 	}
 
-	$inputUser = $_POST['inputUser'];	
+	$inputUser = trim($_POST['inputUser']);
 	if (!ctype_digit($inputUser)) {
 		echo 'Введенное значение не ЧИСЛО !';
 		exit();
