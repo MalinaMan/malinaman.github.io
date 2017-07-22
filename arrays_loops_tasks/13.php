@@ -7,7 +7,6 @@
 			$table[$x][$y] = $x * $y;
 		}
 	}
-
 ?>
 
 <!DOCTYPE HTML>
@@ -16,7 +15,8 @@
 </head>
 
 <html>
-    <body>
+	<body>
+		<p>13. Вывести таблицу умножения</p>
 		<table>
 			<?php foreach ($table as $rowKey => $row): ?>
 				<tr>
@@ -26,5 +26,5 @@
 				</tr>
 			<?php endforeach; ?>
 		</table>
-    </body>
+	</body>
 </html>
