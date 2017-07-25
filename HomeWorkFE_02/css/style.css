@@ -127,22 +127,23 @@ a.mainLink:hover, a.asideLink:hover, a.footerLink:hover {
 	justify-content: space-around;
 }
 
-.main .wrapper .rightSection figure {
+.main .wrapper .rightSection .cellGallery {
 	margin: 2%;
+	text-align: center;
 }
 
-.main .wrapper .rightSection figcaption {
+.main .wrapper .rightSection .cellGallery .caption {
 	font-size: 11px;
-}
-
-.footer {
-	height: 50px;
-	background: #034769;
-	line-height: 50px;
 }
 
 .wrapper {
 	margin: 0 auto;
 	max-width: 880px;
 	min-height: inherit;
+}
+
+.footer {
+	height: 50px;
+	background: #034769;
+	line-height: 50px;
 }
