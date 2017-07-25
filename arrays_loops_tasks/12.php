@@ -6,12 +6,9 @@
 	$n = 1000;
 	$num = 0;
 
-	while (true) {
+	while ($n >= 50) {
 		$n /= 2;
 		$num++;
-		if ($n < 50) {
-			break;
-		}
 	}
 
 	echo "Результат деления: {$n}<br>";
