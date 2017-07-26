@@ -9,9 +9,14 @@
 	if (!isset($_POST['inputText'])) {
 		exit();
 	}
-	$inputText = trim($_POST['inputText']);
+	$inputText = $copyInputText = trim($_POST['inputText']);
 
-	if (ctype_digit($inputText)) {
+	if (strlen($inputText) &&
+		 ($inputText[0] === '-' || $inputText[0] === '+')) {
+		$copyInputText  = substr($copyInputText, 1);
+	}
+
+	if (ctype_digit($copyInputText)) {
 		echo "Строка '$inputText' является правильной записью целого числа !";
 	} else {
 		echo "Строка '$inputText' НЕ является правильной записью целого числа !";
