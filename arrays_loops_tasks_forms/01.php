@@ -40,7 +40,6 @@
 		$strRes = "Form wasn't submitted yet";
 	}
 
-	
 ?>
 
 <!doctype html>

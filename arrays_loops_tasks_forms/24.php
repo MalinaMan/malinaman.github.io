@@ -1,29 +1,73 @@
-<?="24. Вам нужно разработать программу, которая считала бы количество вхождений
-какой­нибудь выбранной вами цифры в выбранном вами числе. Например: цифра 5 в числе
-442158755745 встречается 4 раза<br><br>"?>
-
-<form name="inputForm" method="POST" action="<?=$_SERVER['PHP_SELF']?>">
-	Введите число (в котором искать вхождения): <input type="text" name="inputNumber"><br>
-	Введите цифру: <input type="text" name="searchNumber">
-	<input type="submit">
-	</form>
-
 <?php
-	if (!isset($_POST['inputNumber']) || !isset($_POST['searchNumber'])) {
-		exit();
+	$error = '';
+	$keyInputN = 'numberN';
+	$keyInputS = 'numberS';
+	
+	function requestPost($key) {
+		return isset($_POST[$key]) ? $_POST[$key] : null;
 	}
 
-	$inputNumber  = trim($_POST['inputNumber']);
-	$searchNumber = trim($_POST['searchNumber']);
-	if (!ctype_digit($inputNumber) || !ctype_digit($searchNumber)) {
-		echo 'Введенное значение не ЧИСЛО !';
-		exit();
+	function formIsValid($key, $keyS) {
+		global $error;
+
+		$strN = trim(requestPost($key));
+		$strS = trim(requestPost($keyS));
+		if ($strN === null) {
+			$error = "Error getting the form element by the '{$key}' key";
+			return false;
+		}
+		if ($strS === null) {
+			$error = "Error getting the form element by the '{$keyS}' key";
+			return false;
+		}
+		if (!ctype_digit($strN)) {
+			$error = "Field '{$key}' isn't represented as a number.";
+			return false;
+		}
+		if (!ctype_digit($strS)) {
+			$error = "Field '{$keyS}' isn't represented as a number.";
+			return false;
+		}
+
+		return true;
 	}
 
-	$quantity = 0;
-	for ($i = 0; $i < strlen($inputNumber); $i++) {
-		$quantity += ($inputNumber[$i] === $searchNumber) ? 1 : 0;
+	function countDigitInNumber($number, $digit) {
+		$quantity = 0;
+		for ($i = 0; $i < strlen($number); $i++) {
+			$quantity += ($number[$i] === $digit) ? 1 : 0;
+		}
+		return $quantity;
 	}
 
-	echo "Цифра {$searchNumber} в числе {$inputNumber} встречается {$quantity} раз(-a).";
+	if ($_POST) {
+		if (formIsValid($keyInputN, $keyInputS)) {
+			$strRes = "The digit occurs times: " . countDigitInNumber(requestPost($keyInputN), trim(requestPost($keyInputS)));
+		} else {
+			$strRes = $error;
+		}
+	} else {
+		$strRes = "Form wasn't submitted yet";
+	}
+
 ?>
+
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Task 24</title>
+</head>
+
+<body>
+	<h3>24. Вам нужно разработать программу, которая считала бы количество вхождений какой­нибудь выбранной вами цифры в выбранном вами числе. Например: цифра 5 в числе 442158755745 встречается 4 раза.</h3>
+
+	<form method = 'POST' style = 'line-height: 2'>
+		Enter the number (in which to search for entries): <input type = 'text' name = <?= $keyInputN ?> style = 'width: 40%;' value = '<?= requestPost($keyInputN) ?>'><br>
+		Enter the digit: <input type = 'text' name = <?= $keyInputS ?> style = 'width: 10%;' value = '<?= requestPost($keyInputS) ?>'><br>
+		<button>Go</button>
+	</form><br>
+
+	<b><?= $strRes ?></b>
+</body>
+</html>
