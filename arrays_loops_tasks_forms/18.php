@@ -15,7 +15,7 @@
 			return false;
 		}
 		if (strlen($strArr) === 0) {
-			$error = "The array must have at least one element";
+			$error = "The array must have at least one element.";
 			return false;
 		}
 		$arr = explode(',', $strArr);
