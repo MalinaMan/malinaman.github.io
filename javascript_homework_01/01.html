@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #01</title>
+
+		<script type="text/javascript">
+			var i = -65;
+			while (i) {
+				//alert( i++ );
+				document.write(i++, ' ');
+			}
+		</script>
+
+	</head>
+	<body>
+		<pre>
+		var i = -65;
+		while (i) {
+			alert( i++ );
+		}
+		</pre>
+
+		<p>Какое последнее значение выведет этот код? Почему?<br></p>
+		<p>Ответ: последнее значение будет выведено '-1'. После вывода '-1' значение i увеличится на 1 и станет 0, а при преобразовании в булево 0 даст false и выполнение цикла прервется.
+		</p>
+	</body>
+</html>

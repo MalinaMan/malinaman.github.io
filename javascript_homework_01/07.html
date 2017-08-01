@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #07</title>
+	</head>
+	<body>
+		<p>Следующая функция возвращает true, если параметр age больше 18. В ином случае она возвращает строку.</p>
+		<p>Перепишите функцию, чтобы она делала то же самое, но без if, в одну строку. Сделайте два варианта функции checkAge:
+			Используя оператор '?'
+			Используя оператор ||</p>
+		<pre>
+		function checkAge(age) {
+			if (age > 18) {
+				return true;
+			} else {
+				return 'Something';
+			}
+		}
+		
+		==========>
+
+		function checkAge_1(age) {
+			return (age > 18) ? true: 'Something';
+		}
+
+		function checkAge_2(age) {
+			return (age > 18) || 'Something';
+		}
+		</pre>
+	</body>
+
+	<script type="text/javascript">
+		function checkAge_2(age) {
+			return (age > 18) || 'Something';
+		}
+		document.write(checkAge_2(17));
+	</script>
+</html>

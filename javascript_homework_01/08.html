@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #08</title>
+	</head>
+	<body>
+		<p>Напишите функцию min(a,b), которая возвращает меньшее из чисел a,b.</p>
+		<pre>
+		Пример вызовов:
+		min(2, 5) == 2
+		min(3, -1) == -1
+		========================
+		function min(a, b) {
+			return (a <= b) ? a : b;
+		}
+		</pre>
+	</body>
+
+	<script type="text/javascript">
+		function min(a, b) {
+			return (a <= b) ? a : b;
+		}
+		document.write(min(2, 5), '<br>');
+		document.write(min(3, -1));
+	</script>
+</html>

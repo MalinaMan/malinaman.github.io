@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #03</title>
+
+		<script type="text/javascript">
+			for (var i = 0; i < 5; i++) document.write(i, ' '); //alert( i );
+			document.write('<br>');
+			for (i = 0; i < 5; ++i) document.write(i, ' '); //alert( i );
+		</script>
+
+	</head>
+	<body>
+		<pre>
+		for (var i = 0; i < 5; i++) alert( i );
+		for (var i = 0; i < 5; ++i) alert( i );
+		</pre>
+		<p>Кол-во итераций одинаково, т.к. инкремент выполняется после тела цикла и перед следующей проверкой условия. А после выполнения любого инкремента переменная будет увеличена на 1.</p>
+	</body>
+</html>

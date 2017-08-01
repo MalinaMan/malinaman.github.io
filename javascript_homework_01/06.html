@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #06</title>
+	</head>
+	<body>
+		<p>Создайте код, который выводит все простые числа из интервала от 2 до 30. Результат должен быть: 2,3,5,7,11,13,17,19,23,29.</p>
+		<pre>
+		function getPrimesNumbers(numberTo) {
+			var arr = [];
+			for (var i = 2; i < numberTo; i++) {
+				sqrtI = Math.sqrt(i);
+				for (var j = 2; j <= sqrtI; j++) {
+					if (i % j === 0) {
+						break;
+					}
+				}
+				if (j > sqrtI) {
+					arr.push(i);
+				}
+			}
+			return arr;
+		}
+		</pre>
+	</body>
+
+	<script type="text/javascript">
+		function getPrimesNumbers(numberTo) {
+			var arr = [];
+			for (var i = 2; i < numberTo; i++) {
+				sqrtI = Math.sqrt(i);
+				for (var j = 2; j <= sqrtI; j++) {
+					if (i % j === 0) {
+						break;
+					}
+				}
+				if (j > sqrtI) {
+					arr.push(i);
+				}
+			}
+			return arr;
+		}
+		document.write(getPrimesNumbers(30));
+	</script>
+</html>
