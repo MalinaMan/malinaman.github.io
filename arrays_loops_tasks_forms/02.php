@@ -31,7 +31,7 @@
 	function sumElements($arr) {
 		$result = 0;
 		foreach ($arr as $value) {
-			$result += (int) $value;
+			$result += $value;
 		}
 		return $result;
 	}
