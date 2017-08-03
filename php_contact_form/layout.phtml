@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href='css/style.css'>
+</head>
+<body>
+    <h1>Contact us</h1>
+    <?=$msg?>
+    <form class = 'contact-form' method='post'>
+        <div class = 'form-row'>
+            Username:
+            <input type="text" name="username" id="username" value="<?=requestPost('username')?>">
+        </div>
+        <div class = 'form-row'>
+            E-mail:
+            <input type="text" name="email" id="email" value="<?=requestPost('email')?>">
+        </div>
+        <div class = 'form-row'>
+            Message:
+            <textarea name="message" id="message"><?=requestPost('message')?></textarea>
+        </div>
+        <div class = 'form-row'>
+            <input type="submit" value="Go">
+        </div>
+    </form>
+    
+    <?php
+        $sortDateField = '/php_contact_form/index.php?sort=datetime&order=';
+    ?>
+    <p>Sort by date: <a href=<?=$sortDateField?>ASC class = 'sortLink' >ascending</a> <a href=<?=$sortDateField?>DESC class = 'sortLink'>descending</a></p>
+    <hr>
+    <?php foreach ($feedbacks as $feedback): ?>
+        <pre>
+        <?php
+            $date = date_create_from_format('YmdHis', $feedback['datetime']);
+            echo date_format($date, 'Y-m-d H:i:s');
+        ?>   <?=$feedback['username']?>  (<?=$feedback['email']?>)
+        <?=$feedback['message']?>
+        </pre>
+        <hr>
+
+    <?php endforeach ?>
+
+</body>
+</html>
