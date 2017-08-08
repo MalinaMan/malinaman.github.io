@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task #04</title>
+    <link rel="stylesheet" type="text/css" href='css/style.css'>
+</head>
+<body>
+    <p>4. Написать функцию, которая выводит список файлов в заданной директории. Директория задается как параметр функции.</p>
+    <b><?=$msg?></b>
+    <form class = 'inputForm inputFormMinHeight0' method = 'post'>
+        <div class = 'form-row'>
+            Input path:<input type = 'text' name = "folderLocation" value="<?=requestPost('folderLocation')?>">
+        </div>
+        <div class = 'form-row'>
+            <input type = 'submit' value = "Get List">
+        </div>
+    </form>
+
+    <hr>
+    <h3>List of files:</h3>
+    <?php foreach ($filesArr as $value): ?>
+        <?=$value?><br>
+    <?php endforeach ?>
+
+</body>
+</html>

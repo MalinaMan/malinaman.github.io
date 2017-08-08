@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task #02</title>
+    <link rel="stylesheet" type="text/css" href='css/style.css'>
+</head>
+<body>
+    <p>2. Создать форму с элементом textarea. При отправке формы скрипт должен выдавать ТОП3 длинных слов в тексте. Реализовать с помощью функции.</p>
+    <b><?=$msg?></b>
+    <form class = 'inputForm' method='post'>
+        <div class = 'form-row'>
+            Input text:<textarea name="message"><?=requestPost('message')?></textarea>
+        </div>
+        <div class = 'form-row'>
+            <input type="submit" value="Go">
+        </div>
+    </form>
+
+    <hr>
+    <h3>Result:</h3>
+    <?php foreach ($topWordsArr as $value): ?>
+        <?=$value?><br>
+    <?php endforeach ?>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task #03</title>
+    <link rel="stylesheet" type="text/css" href='css/style.css'>
+</head>
+<body>
+    <p>3. Есть текстовый файл. Необходимо удалить из него все слова, длина которых превышает N символов. Значение N задавать через форму. Проверить работу на кириллических строках - найти ошибку, найти решение.</p>
+    <b><?=$msg?></b>
+    <form class = 'inputForm inputFormMinHeight0' method='post'>
+        <div class = 'form-row'>
+            Number N:<input type="text" name="numberN" value = "<?=requestPost('numberN')?>">
+        </div>
+        <div class = 'form-row'>
+            <input type="submit" value="Go">
+        </div>
+    </form>
+
+    <hr>
+    <h3>Result (the remaining words: strLen <= N):</h3>
+    <?php foreach ($remainWordsArr as $value): ?>
+        <?=$value?><br>
+    <?php endforeach ?>
+
+</body>
+</html>
