@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task #13</title>
+    <link rel="stylesheet" type="text/css" href='css/style.css'>
+</head>
+<body>
+    <p>13. Есть строка $string = 'яблоко черешня вишня вишня черешня груша яблоко черешня вишня яблоко вишня вишня черешня груша яблоко черешня черешня вишня яблоко вишня вишня черешня вишня черешня груша яблоко черешня черешня вишня яблоко вишня вишня черешня черешня груша яблоко черешня вишня';<br>
+Подсчитайте, сколько раз каждый фрукт встречается в этой строке. Выведите в виде списка в порядке уменьшения количества:<br>
+Пример вывода:<br>
+яблоко – 12<br>
+черешня – 8<br>
+груша – 5<br>
+слива - 3.<br></p>
+    <b><?=$msg?></b>
+    <form class = 'inputForm inputFormMinHeight0' method='post'>
+        <div class = 'form-row'>
+            Input text:<textarea name="inputText"></textarea>
+        </div>
+        <div class = 'form-row'>
+            <input type="submit" value="Go">
+        </div>
+    </form>
+
+    <hr>
+    <h3>Result list:</h3>
+    <?php foreach ($resList as $key => $value): ?>
+        <?=$key?> - <?=$value?><br>
+    <?php endforeach ?>
+
+</body>
+</html>

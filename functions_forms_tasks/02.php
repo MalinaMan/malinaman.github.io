@@ -11,7 +11,7 @@ function getLongestWords($m, $q) {
     return array_slice($arr, 0, $q);
 }
 
-function formIsValid_02()
+function formIsValid()
 {
     $message = trim(requestPost('message'));
     return strlen($message);

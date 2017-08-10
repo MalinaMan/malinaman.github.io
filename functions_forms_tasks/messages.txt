@@ -1,0 +1,5 @@
+"a:2:{i:0;s:14:\"20170810181412\";s:7:\"message\";s:15:\"First commnent.\";}"
+"a:2:{i:0;s:14:\"20170810181701\";s:7:\"message\";s:29:\"Second comments.\r\nbla-bla-bla\";}"
+"a:2:{i:0;s:14:\"20170810181847\";s:7:\"message\";s:30:\"It's perfect deal.\r\nThank you!\";}"
+"a:2:{i:0;s:14:\"20170810192312\";s:7:\"message\";s:23:\"It's not swear comment.\";}"
+"a:2:{i:0;s:14:\"20170810193839\";s:7:\"message\";s:27:\"5-th feedback.\r\n<b>ffff<\/b>\";}"

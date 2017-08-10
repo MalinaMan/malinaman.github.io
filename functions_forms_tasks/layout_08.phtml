@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task #08</title>
+    <link rel="stylesheet" type="text/css" href='css/style.css'>
+</head>
+<body>
+    <p>8. Создать гостевую книгу, где любой человек может оставить комментарий в текстовом поле и добавить его. Все добавленные комментарии выводятся над текстовым полем. 
+Реализовать проверку на наличие в тексте запрещенных слов, матов. При наличии таких слов - выводить сообщение "Некорректный комментарий". Реализовать удаление из комментария всех тегов, кроме тега &lt;b&gt;.</p>
+    <b><?=$msg?></b>
+    <h3>Messages:</h3>
+    <table>
+        <?php foreach ($allMessages as $value): ?>
+        <tr><td><?=$value?></td></tr>
+        <?php endforeach ?>
+    </table>
+    <hr>
+
+    <form class = 'inputForm' method = 'post'>
+        <div class = 'form-row'>
+            Input comment:<textarea name="message"></textarea>
+        </div>
+        <div class = 'form-row'>
+            <input type = 'submit' value = "Add">
+        </div>
+    </form>
+
+</body>
+</html>

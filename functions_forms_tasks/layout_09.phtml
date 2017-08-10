@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task #09</title>
+    <link rel="stylesheet" type="text/css" href='css/style.css'>
+</head>
+<body>
+    <p>9. Написать функцию, которая переворачивает строку. Было "abcde", должна выдать "edcba". Ввод текста реализовать с помощью формы.</p>
+    <b><?=$msg?></b>
+    <form class = 'inputForm inputFormMinHeight0' method='post'>
+        <div class = 'form-row'>
+            Input string:<input type="text" name="strForTranform">
+        </div>
+        <div class = 'form-row'>
+            <input type="submit" value="Transform">
+        </div>
+    </form>
+
+    <hr>
+    <b>Input string: <?=requestPost('strForTranform')?><br>
+    Transform string: <?=$strReverse?></b>
+
+</body>
+</html>

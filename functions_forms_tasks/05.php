@@ -2,11 +2,11 @@
 
 require 'functions.php';
 
-function getListFiles($folder) {
+function getListFilesIncludeWord($folder, $needle) {
     $arr = scandir($folder);
     $arr = array_filter($arr, function($val) {
-        global $folder;
-        return !(is_dir("{$folder}/{$val}"));
+        global $folder, $needle;
+        return !(is_dir("{$folder}/{$val}")) && stristr($val, $needle);
     });
     return $arr;
 }
@@ -14,7 +14,8 @@ function getListFiles($folder) {
 function formIsValid()
 {
     $folder = trim(requestPost('folderLocation'));
-    return !(empty($folder)) && is_dir($folder);
+    $needle = trim(requestPost('needle'));
+    return !(empty($folder)) && is_dir($folder) && !(empty($needle)) ;
 }
 
 $filesArr = [];
@@ -22,10 +23,11 @@ $msg = requestGet('msg');
 if ($_POST) {
     if (formIsValid()) {
         $folder = requestPost('folderLocation');
-        $filesArr = getListFiles($folder);
+        $needle = requestPost('needle');
+        $filesArr = getListFilesIncludeWord($folder, $needle);
     } else {
         $msg = 'form was submitted - invalid';
     }
 }
 
-require 'layout_04.phtml';
+require 'layout_05.phtml';

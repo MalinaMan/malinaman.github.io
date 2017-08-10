@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task #10</title>
+    <link rel="stylesheet" type="text/css" href='css/style.css'>
+</head>
+<body>
+    <p>10. Написать функцию, которая считает количество уникальных слов в тексте. Слова разделяются пробелами. Текст должен вводиться с формы.</p>
+    <b><?=$msg?></b>
+    <form class = 'inputForm inputFormMinHeight0' method='post'>
+        <div class = 'form-row'>
+            Input text:<textarea name="inputText"></textarea>
+        </div>
+        <div class = 'form-row'>
+            <input type="submit" value="Go">
+        </div>
+    </form>
+
+    <hr>
+    <b>Input text: <?=requestPost('inputText')?></b><br>
+    <b>The quantity of unique words: <?=$res?></b>
+
+</body>
+</html>

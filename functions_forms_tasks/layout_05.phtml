@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task #05</title>
+    <link rel="stylesheet" type="text/css" href='css/style.css'>
+</head>
+<body>
+    <p>5. Написать функцию, которая выводит список файлов в заданной директории, которые содержат искомое слово. Директория и искомое слово задаются как параметры функции.</p>
+    <b><?=$msg?></b>
+    <form class = 'inputForm' method = 'post'>
+        <div class = 'form-row'>
+            Input path:<input type = 'text' name = "folderLocation" value="<?=requestPost('folderLocation')?>">
+        </div>
+        <div class = 'form-row'>
+            Input needle:<input type = 'text' name = "needle" value="<?=requestPost('needle')?>">
+        </div>
+        <div class = 'form-row'>
+            <input type = 'submit' value = "Get List">
+        </div>
+    </form>
+
+    <hr>
+    <h3>List of files:</h3>
+    <?php foreach ($filesArr as $value): ?>
+        <?=$value?><br>
+    <?php endforeach ?>
+
+</body>
+</html>

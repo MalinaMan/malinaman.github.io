@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task #06</title>
+    <link rel="stylesheet" type="text/css" href='css/style.css'>
+</head>
+<body>
+    <p>6. Создать страницу, на которой можно загрузить несколько фотографий в галерею. Все загруженные фото должны помещаться в папку gallery и выводиться на странице в виде таблицы.</p>
+    <b><?=$msg?></b>
+    <form class = 'inputForm' method = 'post' enctype='multipart/form-data'>
+        <div class = 'form-row'>
+            Select a photo:<input type = 'file' name = 'photoFiles[]' multiple = ''>
+        </div>
+        <div class = 'form-row'>
+            <input type = 'submit' value = "Upload files to gallery">
+        </div>
+    </form>
+
+    <hr>
+    <h3>List of files:</h3>
+    <table>
+        <?php foreach ($filesArr as $value): ?>
+            <tr><td><?=$value?></td></tr>
+        <?php endforeach ?>
+    </table>
+</body>
+</html>
