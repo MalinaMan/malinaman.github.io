@@ -21,3 +21,14 @@ function formIsValid()
 	// logic for form data check
 	return !empty($username) && !empty($email) && !empty($message);
 }
+function get_Flash($key) {
+	if (empty($_SESSION[$key])) {
+		return null;
+	}
+	$value = $_SESSION[$key];
+	unset($_SESSION[$key]);
+	return $value;
+}
+function set_Flash($value, $key) {
+	$_SESSION[$key] = $value;
+}

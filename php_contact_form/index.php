@@ -1,10 +1,11 @@
 <?php
 
-// todo: 1) save date with feedback 2)print date in the list 3) sort
 require 'functions.php';
 
+session_start();
 $words = ['beach', 'smuck', 'sheet'];
-echo $msg = requestGet('msg'); // $_GET['msg']
+$msg = get_Flash('message');
+
 if ($_POST) {
     if (formIsValid()) {
         
@@ -19,8 +20,9 @@ if ($_POST) {
         //     redirect("/php_contact_form/index.php?msg={$msg}");
         // }
 
-        $msg = 'Message saved';
-        redirect("/php_contact_form/index.php?msg={$msg}");
+        set_Flash('Message saved', 'message');
+        echo $_SESSION['message'];
+        redirect("/php_contact_form/index.php");
     } 
     
     $msg = 'form was submitted - invalid';
