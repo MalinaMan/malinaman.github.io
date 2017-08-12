@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #13</title>
+	</head>
+	<body>
+		<p><pre>13. Find a continuous subarray arr, whose sum of elements is maximal.
+	var arr = [1, -2, 3, 4, -9, 6]
+	Example:
+	  Right row in scopes()
+		getMaxSubSum([-1, (2, 3), -9]) = 5
+		getMaxSubSum([(2, -1, 2, 3), -9]) = 6
+		getMaxSubSum([-1, 2, 3, -9, (11)]) = 11
+		getMaxSubSum([-2, -1, (1, 2)]) = 3
+		getMaxSubSum([(100), -9, 2, -3, 5]) = 100
+		getMaxSubSum([(1, 2, 3)]) = 6</pre></p>
+		<hr>
+<pre>
+
+</pre>
+
+		<b>
+		<script type="text/javascript">
+			function getMaxSubSum(arr) {
+				var maxSum = 0;
+
+				for (var i = 0; i < arr.length; i++) {
+					var sumFixedStart = 0;
+					for (var j = i; j < arr.length; j++) {
+						sumFixedStart += arr[j];
+						maxSum = Math.max(maxSum, sumFixedStart);
+					}
+				}
+				return maxSum;
+			}
+
+			document.write('Answer: ' + JSON.stringify(getMaxSubSum([-1, 2, 3, -9])));
+			document.write('<br>Answer: ' + JSON.stringify(getMaxSubSum([2, -1, 2, 3, -9])));
+			document.write('<br>Answer: ' + JSON.stringify(getMaxSubSum([-1, 2, 3, -9, 11])));
+			document.write('<br>Answer: ' + JSON.stringify(getMaxSubSum([-2, -1, 1, 2])));
+			document.write('<br>Answer: ' + JSON.stringify(getMaxSubSum([100, -9, 2, -3, 5])));
+			document.write('<br>Answer: ' + JSON.stringify(getMaxSubSum([1, 2, 3])));
+		</script>
+		</b>
+	</body>
+</html>

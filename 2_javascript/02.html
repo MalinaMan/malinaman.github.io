@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #02</title>
+	</head>
+	<body>
+		<p><pre>2. Create function "isEmpty" that return "true" if object empty or "false" if object has one or more properties. 
+	var User = {};
+	isEmpty(User); //true
+	User.name = "Joe";
+	isEmpty(User); //false</pre></p>
+
+	<h3>Answer</h3>
+<pre>
+function isEmpty(obj) {
+	return Object.keys(obj).length === 0;
+}
+</pre>
+
+		<script type="text/javascript">
+			function isEmpty(obj) {
+				return Object.keys(obj).length === 0;
+			}
+
+			var User = {};
+			document.write(isEmpty(User));
+			document.write('<br>');
+			User.name = "Joe";
+			document.write(isEmpty(User));
+		</script>
+
+	</body>
+</html>

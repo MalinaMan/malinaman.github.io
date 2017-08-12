@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #10</title>
+	</head>
+	<body>
+		<p><pre>10. Create function "find" that search value in array and return value's index or "-1";
+	Example:
+		var array = [1,23,4,5];
+		find(23, array) //true
+		find(3, array) //false</pre></p>
+		<hr>
+<pre>
+function find(needle, arr) {
+	for (i = 0; i < arr.length; i++) {
+		if (arr[i] === needle) {
+			return i;
+		}
+	}
+	return -1;
+}
+</pre>
+
+		<b>
+		<script type="text/javascript">
+			function find(needle, arr) {
+				for (i = 0; i < arr.length; i++) {
+					if (arr[i] === needle) {
+						return i;
+					}
+				}
+				return -1;
+			}
+			var array = [1,23,4,5];
+			document.write('Answer: ' + find(23, array));
+			document.write('<br>Answer: ' + find(3, array));
+		</script>
+		</b>
+	</body>
+</html>

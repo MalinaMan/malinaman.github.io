@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #05</title>
+	</head>
+	<body>
+		<p><pre>5. You have Salaries object - multiply all number properties by 2.
+  var Salaries = {
+  	"Joe": 300,
+  	"Boe": 500,
+  	"Doe": "Abracadabra"
+  };</pre></p>
+
+	<hr>
+<pre>
+function multiplySalary(obj, multiplier) {
+	for (var index in obj) { 
+		if (obj.hasOwnProperty(index) && !isNaN(obj[index])) {
+			obj[index] *= multiplier;
+		}
+	}
+	return obj;
+}
+</pre>
+
+		<b>
+		<script type="text/javascript">
+			function multiplySalary(obj, multiplier) {
+				for (var index in obj) { 
+					if (obj.hasOwnProperty(index) && !isNaN(obj[index])) {
+						obj[index] *= multiplier;
+					}
+				}
+				return obj;
+			}
+
+			var Salaries = {
+						"Joe": 300,
+						"Boe": 500,
+						"Doe": "Abracadabra"};
+			Salaries = multiplySalary(Salaries, 2);
+			document.write('Answer: "' + JSON.stringify(Salaries) + '"');
+		</script>
+		</b>
+	</body>
+</html>

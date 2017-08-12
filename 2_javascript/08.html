@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #08</title>
+	</head>
+	<body>
+		<p><pre>8. You have array with N elements(numbers). Show sum of all items.
+  Example:
+    var array = [4,63,2,15];</pre></p>
+		<hr>
+<pre>
+function sumArray(arr) {
+	var sum = 0;
+	for (i = 0; i < arr.length; i++) {
+		sum += arr[i];
+	}
+	return sum;
+}
+
+// arr.reduce(function(a, b) {
+//			return a + b;
+//		}, 0);
+</pre>
+
+		<b>
+		<script type="text/javascript">
+			/*function sumArray(arr) {
+				var sum = 0;
+				for (i = 0; i < arr.length; i++) {
+					sum += arr[i];
+				}
+				return sum;
+			}*/
+			var array = [4, 63, 2, 15].reduce(function(a, b) {
+							return a + b;
+						}, 0);
+			document.write('Answer: ' + JSON.stringify(array));
+		</script>
+		</b>
+	</body>
+</html>

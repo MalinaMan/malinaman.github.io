@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #04</title>
+	</head>
+	<body>
+		<p><pre>4. You have Salaries object - show property with the biggest salary. 
+  var Salaries = {
+  	"Joe": 300,
+  	"Boe": 500,
+  	"Doe": 800
+  };</pre></p>
+
+	<hr>
+<pre>
+function maxSalary(obj) {
+	return Object.keys(obj).reduce(
+		function(a, b){
+			return (obj[a] > obj[b]) ? a : b;
+		});
+}
+</pre>
+
+		<b>
+		<script type="text/javascript">
+			function maxSalary(obj) {
+				return Object.keys(obj).reduce(
+					function(a, b){
+						return (obj[a] > obj[b]) ? a : b;
+					});
+			}
+
+			var Salaries = {
+						"Joe": 300,
+						"Boe": 500,
+						"Doe": 800};
+			maxKeyfromValue = maxSalary(Salaries);
+			document.write('Answer: "' + maxKeyfromValue + '": ' + Salaries[maxKeyfromValue]);
+		</script>
+		</b>
+	</body>
+</html>

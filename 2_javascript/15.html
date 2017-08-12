@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #15</title>
+	</head>
+	<body>
+		<p><pre>15. Sort objects by age property.
+	var a = { name: "Вася", age: 23 };
+	var b = { name: "Маша", age: 18 };
+	var c = { name: "Вовочка", age: 6 };
+	Answer:
+		var result = [c,b,a];</pre></p>
+		<hr>
+<pre>
+function mySort() {
+	var arr = [];
+	for (var i = 0; i < arguments.length; i++) {
+		arr.push(arguments[i]);
+	}
+	arr.sort(function(a, b) {
+				return a.age - b.age;
+			});
+	return arr;
+}
+</pre>
+
+		<b>
+		<script type="text/javascript">
+			function mySort() {
+				var arr = [];
+				for (var i = 0; i < arguments.length; i++) {
+					arr.push(arguments[i]);
+				}
+				arr.sort(function(a, b) {
+							return a.age - b.age;
+						});
+				return arr;
+			}
+
+			var a = {name: "Вася", age: 23};
+			var b = {name: "Маша", age: 18};
+			var c = {name: "Вовочка", age: 6};
+			document.write('Answer: ' + JSON.stringify(mySort(a, b, c)));
+		</script>
+		</b>
+	</body>
+</html>

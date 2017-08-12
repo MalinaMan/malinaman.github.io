@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #12</title>
+	</head>
+	<body>
+		<p><pre>12. Create function "filterRange(array,a,b)" that return new array with values between a,b params.
+	Example:
+		var arr = [5, 4, 3, 8, 0];
+		var filtered = filterRange(arr, 3, 5); //filtered = [5, 4, 3]</pre></p>
+		<hr>
+<pre>
+function filterRange(array, a, b) {
+	var arrNew = [];
+	for (i = 0; i < array.length; i++) {
+		if (array[i] >= a && array[i] <= b) {
+			arrNew.push(array[i]);
+		}
+	}
+	return arrNew;
+}
+</pre>
+
+		<b>
+		<script type="text/javascript">
+			function filterRange(array, a, b) {
+				var arrNew = [];
+				for (i = 0; i < array.length; i++) {
+					if (array[i] >= a && array[i] <= b) {
+						arrNew.push(array[i]);
+					}
+				}
+				return arrNew;
+			}
+			var arr = [5, 4, 3, 8, 0];
+			var filtered = filterRange(arr, 3, 5);
+			document.write('Answer: ' + JSON.stringify(filtered));
+		</script>
+		</b>
+	</body>
+</html>

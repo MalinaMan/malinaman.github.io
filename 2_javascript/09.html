@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #09</title>
+	</head>
+	<body>
+		<p><pre>What will you see in alert?
+	var arr = [1, 2, 3];
+	var arr2 = arr;
+	arr2[0] = 5;</pre></p>
+		<hr>
+
+		<b>
+		<script type="text/javascript">
+			var arr = [1, 2, 3];
+			var arr2 = arr;
+			arr2[0] = 5;
+			document.write('Answer: ' + arr[0] + ';  ' + arr2[0]);
+			document.write('<br>Скопировали ссылку на массив. При этом обе переменные ссылаются на один массив данных в памяти. Изменения через любую переменную, приводят к изменению единственного объекта.');
+		</script>
+		</b>
+	</body>
+</html>

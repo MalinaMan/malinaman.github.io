@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #03</title>
+	</head>
+	<body>
+		<p><pre>3. You have Salaries object - show sum of all salaries in the object. 
+  var Salaries = {
+  	"Joe": 300,
+  	"Boe": 500,
+  	"Doe": 800
+  };</pre></p>
+
+	<hr>
+<pre>
+function sumSalary(obj) {
+	var sum = 0;
+	for (var prop in obj) {
+		if (obj.hasOwnProperty(prop)) {
+			sum += obj[prop];
+		}
+	}
+	return sum;
+}
+</pre>
+
+		<b>
+		<script type="text/javascript">
+			function sumSalary(obj) {
+				var sum = 0;
+				for (var prop in obj) {
+					if (obj.hasOwnProperty(prop)) {
+						sum += obj[prop];
+					}
+				}
+				return sum;
+			}
+
+			var Salaries = {
+						"Joe": 300,
+						"Boe": 500,
+						"Doe": 800};
+			document.write('Answer: ' + sumSalary(Salaries));
+		</script>
+		</b>
+	</body>
+</html>
