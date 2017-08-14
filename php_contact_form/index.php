@@ -1,5 +1,6 @@
 <?php
 
+error_reporting(E_ALL);
 require 'functions.php';
 
 session_start();
@@ -21,7 +22,6 @@ if ($_POST) {
         // }
 
         set_Flash('Message saved', 'message');
-        echo $_SESSION['message'];
         redirect("/php_contact_form/index.php");
     } 
     
