@@ -39,8 +39,7 @@ $sortField = requestGet('sort');
 if ($sortField !== null) {
     $order = strtoupper(requestGet('order', 'DESC'));
 
-    usort($feedbacks, function($a, $b) {
-        global $sortField, $order;
+    usort($feedbacks, function($a, $b) use ($sortField, $order) {
         if (!(array_key_exists($sortField, $a)) || !(array_key_exists($sortField, $b))) {
             return 0;
         }
