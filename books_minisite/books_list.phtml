@@ -1,0 +1,23 @@
+
+<a href="/books_minisite/index.php?controller=books&amp;action=create">Create book</a>
+
+<table border=1 width=100%>
+    <tr>
+        <td>Id</td>
+        <td>Title</td>
+        <td>Price</td>
+        <td>Actions</td>
+    </tr>
+    
+    <?php foreach($books as $book) : ?>
+        <tr>
+            <td><?=$book['id']?></td>
+            <td><?=$book['title']?></td>
+            <td><?=$book['price']?></td>
+            <td><a href="/books_minisite/index.php?controller=books&amp;action=edit&amp;id=<?=$book['id']?>">Edit</a>
+                <a href="/books_minisite/index.php?controller=books&amp;action=delete&amp;id=<?=$book['id']?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    
+</table>
