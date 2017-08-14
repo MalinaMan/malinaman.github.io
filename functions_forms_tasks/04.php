@@ -4,8 +4,7 @@ require 'functions.php';
 
 function getListFiles($folder) {
     $arr = scandir($folder);
-    $arr = array_filter($arr, function($val) {
-        global $folder;
+    $arr = array_filter($arr, function($val) use($folder) {
         return !(is_dir("{$folder}/{$val}"));
     });
     return $arr;

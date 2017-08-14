@@ -8,8 +8,7 @@ function clearFileFromWordsLongerN($N) {
     $str = str_replace('.', ' ', $str);
     $arr = getArrayFromTextarea($str);
     
-    $arr = array_filter($arr, function($val){
-        global $N;
+    $arr = array_filter($arr, function($val) use($N) {
         return (mb_strlen($val) <= $N);
     });
 

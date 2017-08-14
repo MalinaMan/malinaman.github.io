@@ -2,8 +2,7 @@
 
 require 'functions.php';
 
-function formIsValid()
-{
+function formIsValid() {
     global $msg;
     $message = trim(requestPost('message'));
 

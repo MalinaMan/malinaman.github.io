@@ -1,6 +1,7 @@
 <?php
 
 require 'functions.php';
+$foldernameGallery = 'gallery';
 
 function formIsValid()
 {
@@ -9,8 +10,15 @@ function formIsValid()
     return !(empty($folder)) && is_dir($folder) && !(empty($needle)) ;
 }
 
+function checkAndCreateDirectory($foldername) {
+    if (!is_dir($foldername)) {
+        mkdir($foldername);
+    }
+}
+
 function uploadAttempt($attachment)
 {
+    global $foldernameGallery;
     $allowedTypes = true;
     
     foreach ($attachment['type'] as $fileType) {
@@ -23,10 +31,12 @@ function uploadAttempt($attachment)
         return false;
     }
     
+    checkAndCreateDirectory($foldernameGallery);
+
     $filesArr = [];
     for ($i = 0; $i < count($attachment['name']); $i++) {
         $filename = $attachment['name'][$i];
-        $uploadRes = move_uploaded_file($attachment['tmp_name'][$i], "gallery/{$filename}");
+        $uploadRes = move_uploaded_file($attachment['tmp_name'][$i], $foldernameGallery . "/{$filename}");
         if ($uploadRes === false) {
             return false;
         }
@@ -36,18 +46,23 @@ function uploadAttempt($attachment)
     return $filesArr;
 }
 
+
 $filesArr = [];
 $msg = requestGet('msg');
 if ($_FILES) {
     $attachment = $_FILES['photoFiles'];
     if (!array_sum($attachment['error'])) {
-        $filesArr = uploadAttempt($attachment);
-        if ($filesArr !== false) {
+        $uploadRes = uploadAttempt($attachment);
+        if ($uploadRes === false) {
+            $msg = 'Error upload files to gallery';
+        } else {
             $msg = 'Photos upload to gallery successfully';
         }
     } else {
         $msg = 'form was submitted - invalid';
     }
 }
+
+$filesArr = array_diff(scandir($foldernameGallery), array('..', '.'));
 
 require 'layout_06.phtml';
