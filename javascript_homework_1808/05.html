@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #05</title>
+
+		<script type="text/javascript">
+			function Animal() {}
+			function Rabbit() {}
+
+			Rabbit.prototype = Object.create(Animal.prototype);
+
+			var rabbit = new Rabbit();
+			alert( rabbit.constructor == Rabbit );
+			alert( rabbit.constructor == Animal );
+		</script>
+
+	</head>
+	<body>
+		<pre>5. В коде ниже создаётся простейшая иерархия классов: Animal -> Rabbit.
+
+Что содержит свойство rabbit.constructor? Распознает ли проверка в alert объект как Rabbit?
+
+function Animal() {}
+function Rabbit() {}
+
+Rabbit.prototype = Object.create(Animal.prototype);
+
+var rabbit = new Rabbit();
+alert( rabbit.constructor == Rabbit ); // что выведет?   --> false</pre><br>
+
+		<p>Ответ: в alerte будет выведен false.<br>
+		Свойство constructor будет взято по цепочке прототипов:<br>
+			1. в объекте rabbit такого свойства нет (пустой объект);<br>
+			2. в прототипе Rabbit также нет такого свойства, т.к. строкой Rabbit.prototype = Object.create(Animal.prototype) мы его унаследовали от Animal и при этом свойство constructor прототипа пропало, хотя по-умолчанию оно присутствовало и указывало на функцию-конструктор.<br>
+			3. в прототипе Animal свойство constructor есть по-умолчанию и равно функции-конструктору Animal. Поэтому rabbit.constructor == Animal даст true.
+		</p>
+	</body>
+</html>

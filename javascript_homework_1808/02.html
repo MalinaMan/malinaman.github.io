@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #02</title>
+	</head>
+	<body>
+		<pre>Прототип и this
+Сработает ли вызов rabbit.eat() ?
+
+			Если да, то в какой именно объект он запишет свойство full: в rabbit или animal?
+
+			var animal = {
+			  eat: function() {
+			    this.full = true;
+			  }
+			};
+
+			var rabbit = {
+				__proto__: animal
+			};
+
+			rabbit.eat();</pre><br>
+		<p>Ответ: 1. Вызов rabbit.eat() сработает (обратиться по цепочке к animal, на который указывает свойство proto);<br>
+			2. Свойство full со значением true запишется в rabbit, т.к. оператор this будет указывать на объект с которого произошел вызов функции eat (т.е. текущим контекстом будет являться объект rabbit).
+		</p>
+	</body>
+</html>

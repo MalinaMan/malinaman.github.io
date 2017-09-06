@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS #04</title>
+
+		<script type="text/javascript">
+			function Animal(name) {
+			  this.name = name;
+			}
+
+			Animal.prototype.walk = function() {
+			  alert( "ходит " + this.name );
+			};
+
+			function Rabbit(name) {
+			  Animal.apply(this, arguments);
+			}
+
+			Rabbit.prototype = Object.create(Animal.prototype);
+
+			Rabbit.prototype.walk = function() {
+			  alert( "прыгает! и ходит: " + this.name );
+			}
+		</script>
+
+	</head>
+	<body>
+		<pre>4. Найдите ошибку в наследовании. К чему она приведёт?
+
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.walk = function() {
+  alert( "ходит " + this.name );
+};
+
+function Rabbit(name) {
+  this.name = name;
+}
+
+Rabbit.prototype = Animal.prototype;
+
+Rabbit.prototype.walk = function() {
+  alert( "прыгает! и ходит: " + this.name );
+};</pre><br>
+
+		<p>Ответ: Ошибка в строке<br>
+			Rabbit.prototype = Animal.prototype;<br>
+		это не наследование, а копирование по ссылке. Это привело к перезатиранию в прототипе функции walk().
+		Следовало задать наследование через запись<br>
+			<b>Rabbit.prototype = Object.create(Animal.prototype);</b><br><br>
+		Также, изначально объект Rabbit имеет одинаковые свойства со своим родителем Animal, а значит можно было не дублировать код с перечислением свойств, а вызвать его напрямую через
+		<pre>function Rabbit(name) {
+  Animal.apply(this, arguments);
+}</pre>
+		</p>
+	</body>
+</html>
