@@ -1,3 +1,4 @@
+(function () {
 	var node = null;
 
 	function resetColor()
@@ -92,3 +93,13 @@
 			list.appendChild(item);
 		}
 	}
+
+	document.getElementById("selectFirstChild").addEventListener("click", selectFirstChild, false);
+	document.getElementById("selectLastChild").addEventListener("click", selectLastChild, false);
+	document.getElementById("selectNextNode").addEventListener("click", selectNextNode, false);
+	document.getElementById("selectPrevNode").addEventListener("click", selectPrevNode, false);
+	document.getElementById("createNewChild").addEventListener("click", createNewChild, false);
+	document.getElementById("removeLastChild").addEventListener("click", removeLastChild, false);
+	document.getElementById("createNewChildAtStart").addEventListener("click", createNewChildAtStart, false);
+
+}());
