@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>DOM homework</title>
+		<script type="text/javascript" src="DOM_functions.js"></script>
+	</head>
+	
+	<body>
+		<ul style="font-weight: bold" id="list"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li><li>List Item 4</li><li>List Item 5</li></ul>
+		<br/>
+		<input type="button" onclick="selectFirstChild()" style="width: 210px;" value="Choose first element"/><br/>
+		<input type="button" onclick="selectLastChild()" style="width: 210px;" value="Choose last element"/><br/>
+		<input type="button" onclick="selectNextNode()" style="width: 210px;" value="Choose next element"/><br/>
+		<input type="button" onclick="selectPrevNode()" style="width: 210px;" value="Choose previous element"/><br/>
+		<input type="button" onclick="createNewChild()" style="width: 210px;" value="Add element"/><br/>
+		<input type="button" onclick="removeLastChild()" style="width: 210px;" value="Delete element"/><br/>
+		<input type="button" onclick="createNewChildAtStart()" style="width: 210px;" value="Insert to begin"/><br/>
+	</body>
+</html>
