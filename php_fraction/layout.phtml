@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fractions</title>
+    <link rel="stylesheet" type="text/css" href='style.css'>
+</head>
+<body>
+    <h3>Input fractions</h3>
+    <form method='post'>
+        <div>
+            Input fraction A: <input type="text" name="numeratorA" value="<?=requestPost('numeratorA')?>"> / <input type="text" name="denominatorA" value="<?=requestPost('denominatorA')?>">
+        </div><br>
+        <div>Input fraction B: <input type="text" name="numeratorB" value="<?=requestPost('numeratorB')?>"> / <input type="text" name="denominatorB" value="<?=requestPost('denominatorB')?>"></div>
+        <br>
+        <input type="submit" value="Calculate">
+    </form>
+
+    <b><?=$msg?></b>
+
+    <hr>
+    <h3>Results of mathematical operations:</h3>
+    <b>add: <?=$fractionAdd?></b><br>
+    <b>multiply: <?=$fractionMultiply?></b>
+</body>
+</html>
