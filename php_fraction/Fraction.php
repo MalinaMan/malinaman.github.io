@@ -24,8 +24,11 @@
 			return round($this->numerator / $this->denominator, 5);
 		}
 
-		public function NOD($number1, $number2) {
-			// return gmp_gcd($number1, $number2);  // php has already a ready function 'gmp_gcd'
+		private function NOD($number1, $number2) {
+			// return gmp_gcd($number1, $number2);
+			if ($number1 == 0) {
+				return $number2;
+			}
 			while ($number1 != $number2) {
 				if ($number1 > $number2) {
 					$number1 -= $number2;
@@ -61,8 +64,7 @@
 			$a->reductionToCommonDenominator($lcm);
 			$b->reductionToCommonDenominator($lcm);
 
-			$fractionRes = new Fraction($a->numerator + $b->numerator, $a->denominator);
-			return $fractionRes->reduce();
+			return (new Fraction($a->numerator + $b->numerator, $a->denominator))->reduce();
 		}
 
 		public static function multiply(Fraction $a, Fraction $b)

@@ -16,15 +16,23 @@
 	if ($_POST) {
 		
 		if (formIsValid()) {
-			$fractionA = getFraction(requestPost('numeratorA'), requestPost('denominatorA'));
-			$fractionB = getFraction(requestPost('numeratorB'), requestPost('denominatorB'));
 
-			if ($fractionA && $fractionB) {
-				$strFractionA = (string) $fractionA;
-				$strFractionB = (string) $fractionB;
-				$fractionAdd = Fraction::add($fractionA, $fractionB);
-				$fractionMultiply = Fraction::multiply($fractionA, $fractionB);
-				saveOperationToLog($strFractionA, $strFractionB, $fractionMultiply, $fractionAdd);
+			try {
+				$fractionA = getFraction(requestPost('numeratorA'), requestPost('denominatorA'));
+				$fractionB = getFraction(requestPost('numeratorB'), requestPost('denominatorB'));
+
+				if ($fractionA && $fractionB) {
+					$strFractionA = (string) $fractionA;
+					$strFractionB = (string) $fractionB;
+					$fractionAdd = Fraction::add($fractionA, $fractionB);
+					$fractionMultiply = Fraction::multiply($fractionA, $fractionB);
+					saveOperationToLog($strFractionA, $strFractionB, $fractionMultiply, $fractionAdd);
+					$msg = "New log's record added successfully";
+				}
+			} catch (\PDOException $e) {
+				exit("PDO error: {$e->getMessage()}");
+			} catch(\Exception $e) {
+				exit("{$e->getMessage()}");
 			}
 
 		} else {
