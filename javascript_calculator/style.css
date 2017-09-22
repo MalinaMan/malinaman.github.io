@@ -1,0 +1,11 @@
+input, button {
+	margin: 5px 5px;
+}
+
+div {
+	border-bottom: 1px solid black;
+}
+
+p {
+	font-weight: bolder;
+}
