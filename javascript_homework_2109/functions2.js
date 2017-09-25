@@ -1,6 +1,6 @@
 (function paramsGet() {
 	"use strict";
-	
+
 	function getQueryString()
 	{
 		var args = {};
@@ -26,12 +26,12 @@
 	{
 		var args = getQueryString();
 		if (!("a" in args) || !("b" in args)) {
-			document.getElementById("result").innerHTML = "Warning: in query not exists param 'a' and/or 'b'";
+			$("result").innerHTML = "Warning: in query not exists param 'a' and/or 'b'";
 			return;
 		}
-		document.getElementById("result").innerHTML = "Sum = " + (+args.a + +args.b);
+		$("result").innerHTML = "Sum = " + (+args.a + +args.b);
 	}
 
-	document.getElementById("readQueryParameters").addEventListener("click", show, false);
-	
+	$("readQueryParameters").addEventListener("click", show, false);
+
 }());

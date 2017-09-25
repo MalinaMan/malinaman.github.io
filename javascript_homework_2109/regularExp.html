@@ -5,26 +5,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Regular expression</title>
 
+		<script type="text/javascript" src="functionGet.js"></script>
 		<script type="text/javascript">
 			window.onload = function () {
 
-			var get = function(id) {
-				return document.getElementById(id);
-			}
-			get("calculate").onclick = function () {
-				var input = get('inputString').value;
+			$("calculate").onclick = function () {
+				var input = $('inputString').value;
 				var pattern = /\d{1,}\s*[-+*/]\s*\d{1,}/;
 				if (!pattern.test(input)) {
-					get('result').innerHTML = "Input string '" + input + "'' NOT matches pattern !";
+					$('result').innerHTML = "Input string '" + input + "'' NOT matches pattern !";
 					return false;
 				}
 				var arr = input.split(/\s*/);
 
 				if (!+arr[2] && arr[1] === '/') {
-					get('result').innerHTML = "Arithmetic error: division by zero";
+					$('result').innerHTML = "Arithmetic error: division by zero";
 					return false;
 				}
-				get('result').innerHTML = eval(input);
+				$('result').innerHTML = eval(input);
 			}
 		}
 		</script>

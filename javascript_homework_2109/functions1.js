@@ -36,7 +36,7 @@
 
 	function showTime()
 	{
-		get("time").innerHTML = formatTime();
+		$("time").innerHTML = formatTime();
 	}
 
 	function addZero(n)
@@ -44,13 +44,8 @@
 		return ('0' + n).slice(-2);
 	}
 
-	var get = function(id)
-	{
-		return document.getElementById(id);
-	}
-
-	get("start").addEventListener("click", startTime, false);
-	get("stop").addEventListener("click", stopTime, false);
-	get("reset").addEventListener("click", resetTime, false);
+	$("start").addEventListener("click", startTime, false);
+	$("stop").addEventListener("click", stopTime, false);
+	$("reset").addEventListener("click", resetTime, false);
 
 }());
