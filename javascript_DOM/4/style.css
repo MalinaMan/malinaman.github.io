@@ -1,0 +1,9 @@
+#elem
+{
+	position: absolute;
+	left: 60px;
+	top: 60px;
+	height: 50px;
+	width: 50px;
+	background-color: darkblue;
+}
