@@ -44,10 +44,8 @@
 		if (setFirstChild) {
 			var list = $("list");
 			node = list.firstChild;
-			node.setAttribute("style", COLOR_LIME);
-		} else {
-			node.setAttribute("style", COLOR_LIME);
 		}
+		node.setAttribute("style", COLOR_LIME);
 	}
 
 	function selectPrevNode()
@@ -62,10 +60,8 @@
 		if (setLastChild) {
 			var list = $("list");
 			node = list.lastChild;
-			node.setAttribute("style", COLOR_LIME);
-		} else {
-			node.setAttribute("style", COLOR_LIME);
 		}
+		node.setAttribute("style", COLOR_LIME);
 	}
 
 	function createNewChild()
