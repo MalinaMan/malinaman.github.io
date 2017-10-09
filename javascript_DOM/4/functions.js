@@ -15,16 +15,16 @@
 		var origX = elementToDrag.offsetLeft,
 			origY = elementToDrag.offsetTop;
 
-		if (e.keyCode == '38') {  // UP
+		if (e.keyCode === 38) {  // UP
 			deltaY = -STEP;
 		}
-		else if (e.keyCode == '40') {  // DOWN
+		else if (e.keyCode === 40) {  // DOWN
 			deltaY = STEP;
 		}
-		else if (e.keyCode == '37') {  // LEFT
+		else if (e.keyCode === 37) {  // LEFT
 			deltaX = -STEP;
 		}
-		else if (e.keyCode == '39') {  // RIGHT
+		else if (e.keyCode === 39) {  // RIGHT
 			deltaX = STEP;
 		}
 

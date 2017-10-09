@@ -41,7 +41,7 @@
 	var validKeyPress = function (e)
 	{
 		if (!(e.charCode >= 48 && e.charCode <= 57  // must be between 0 and 9 (ascii codes 48...57)
-			|| e.charCode == 45)) {   // negative sign
+			|| e.charCode === 45)) {   // negative sign
 			e.preventDefault();
 		}
 	}
