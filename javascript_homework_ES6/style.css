@@ -1,0 +1,11 @@
+nav {
+	min-height: 40px;
+}
+
+section {
+	min-height: 220px;
+}
+
+footer {
+	border-top: 1px solid darkgrey;
+}
