@@ -1,0 +1,26 @@
+h2 {
+	margin: 8px 0px;
+}
+
+.table {
+	display: table;
+	border: 1px solid black;
+	min-width: 90%;
+	margin-top: 10px;
+}
+
+.th {
+	display: table-cell;
+	border: 1px solid black;
+	text-align: center;
+	background-color: #FFEFD5;
+}
+
+.tr {
+	display: table-row;
+}
+
+.td {
+	display: table-cell;
+	border: 1px solid darkgrey;
+}
