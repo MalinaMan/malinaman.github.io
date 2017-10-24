@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Запись на прием</title>
+</head>
+<body>
+    <header>
+        <h1>Запись на прием</h1>
+    </header>
+    <form>
+        <fieldset>
+            <legend>Личная информация</legend>
+            <p>
+                <label>
+                    Имя
+                    <input type="text" name="name" required /></label>
+            </p>
+            <p>
+                <label>
+                    Телефон
+                    <input type="tel" name="phone" required /></label>
+            </p>
+            <p>
+                <label>
+                    Адрес электронной почты
+            <input type="email" name="email" required /></label>
+            </p>
+            <p>
+                <label>
+                    Дата рождения
+                    <input type="date" name="dob" required>
+                </label>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Назначить прием</legend>
+            <p>
+                <label for="reason">Какова причина вашего визита?
+                    <input list="reason" required />
+                    <datalist id="reason">
+                        <option value="Плановый осмотр">
+                        <option value="Симптомы простуды или гpиnna">
+                        <option value="Анализ крови">
+                        <option value="Послеоперационный осмотр">
+                    </datalist>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Степень болевых ощущений
+                    <input type="range" name="pain" title="0 - нет боли, 10 - боль нестерпима" min="0" max="10" list="tickmarks" />
+                    <datalist id="tickmarks">
+                        <script>
+                            s = '';
+                            for(var i=0; i<=10; i++)
+                                s += `<option value=${i}>`;
+                            tickmarks.innerHTML = s;
+                        </script>
+                    </datalist>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Предпочтительная дата
+                    <input type="date" name="date" id="wishdate" required />
+                    <script>wishdate.valueAsDate = new Date();</script>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Предпочтительное время
+                    <input type="time" name="time" value="09:00" step="1800" min="09:00" max="17:30" required /></label>
+            </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="Отправить" />
+        </p>
+    </form>
+    <br>
+    <footer><a href="https://github.com/MalinaMan?tab=repositories" target="_blank"> &copy; 2017 Nick Malinovskiy</a></footer>
+</body>
+</html>
