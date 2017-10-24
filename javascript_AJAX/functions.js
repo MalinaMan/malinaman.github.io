@@ -20,7 +20,7 @@
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				// Typical action to be performed when the document is ready:
-				let data = JSON.parse(xhttp.responseText).results;
+				let data = JSON.parse(this.responseText).results;
 				let posts = data.map(mapToPost);
 
 				let oldChild = document.querySelector('.table');
