@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Video player</title>
+    <script src="functions.js" defer></script>
+    <link rel="stylesheet" href='style.css'>
+</head>
+<body>
+    <header>
+        <h2>Video player</h2>
+    </header>
+    <section>
+        <h4>mediafile: mouse</h4>
+        <video id="video" poster="mouse.png" loop>
+            <source src="mouse.mp4" type="video/mp4" />
+            <source src="vsvideo.webm" type="video/webm" />
+            <a href="http://html5accessibility.com/">Браузер не поддерживает воспроизведение видео медиафайлов (MP4, WEBM)</a>
+        </video>
+        <div class="controls">
+            <button id="playButton">play</button>
+            <button id="pauseButton">pause</button>
+            <button id="stopButton">stop</button>
+            <input type="checkbox" id="switchLoop" checked />loop
+        </div>
+    </section>
+    <footer><a href="https://github.com/MalinaMan?tab=repositories" target="_blank"> &copy; 2017 Nick Malinovskiy</a></footer>
+</body>
+</html>

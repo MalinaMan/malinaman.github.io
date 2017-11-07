@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Contacts</title>
+</head>
+<body>
+    <section itemscope itemtype="http://schema.org/Person">
+        <h1 itemprop="name" data-age="30" data-sex="male">Nick Malinovskiy</h1>
+
+        <div itemprop="nationality" itemscope itemtype="http://schema.org/Country" data-country="Ukraine" style="margin: 2px; display: flex; align-items: center;">nationality
+            <span itemprop="name" style="margin-left: 8px"></span>
+            <img itemprop="logo" src="logoUA.png">
+        </div>
+
+        <img itemprop="image" src="photo.png"><br>
+        <a itemprop="email" href="mailto:nick.malinovskiy@gmail.com" data-email="nick.malinovskiy@gmail.com">Contact by email</span></a>
+
+        <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="addressCountry" data-country="Ukraine">Ukraine</span>,<br>
+            <span itemprop="addressLocality" data-city="Kyiv">Kyiv</span>,
+            <span itemprop="streetAddress">10A Soborna str.</span>
+        </p>
+        <p itemprop="telephone" data-mobile="380504199139">mob: 38 (050) 419-91-39</p>
+
+        <a itemprop="url" href="https://github.com/MalinaMan?tab=repositories"> &copy; 2017 Nick Malinovskiy</a>
+    </section>
+</body>
+</html>

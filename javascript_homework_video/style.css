@@ -1,0 +1,24 @@
+section
+{
+	min-height: 480px;
+}
+
+video
+{
+	border: 2px solid darkgray;
+	cursor: pointer;
+	width: 294px;
+	height: 242px;
+}
+
+.controls
+{
+	border: 1px solid #e0e0d1;
+	padding: 3px;
+	width: 294px;
+}
+
+button
+{
+	width: 50px;
+}

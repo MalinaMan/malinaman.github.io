@@ -1,0 +1,32 @@
+section {
+	min-width: 280px;
+	min-height: 400px;
+	float: left;
+}
+
+ul {
+	width: 140px;
+	min-height: 160px;
+	border: 1px solid darkgrey;
+}
+
+li {
+	max-width: 100px;
+	margin: 5px 0;
+}
+
+#Basket ul {
+	background-color: aliceblue;
+}
+#Catalog ul {
+	background-color: wheat;
+}
+
+#Catalog li {
+	background-color: tan;
+}
+
+footer {
+	clear: left;
+	border-top: 1px solid darkgrey;
+}
