@@ -44,6 +44,7 @@
 		if (evt.stopPropagation) evt.stopPropagation();
 
 		var elemLi = $(evt.dataTransfer.getData("Text"));
+		elemLi.style.opacity = '';
 		this.appendChild(elemLi);
 		evt.dataTransfer.clearData();
 
