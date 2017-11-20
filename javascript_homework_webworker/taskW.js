@@ -10,6 +10,10 @@ addEventListener("message", (e) => {
 	var arr = [];
 	for (let i=0; i<maxElement; i++) {
 		arr.push(~~(Math.random() * 100));
+		
+		if (i%1000 === 0) {
+			postMessage("Task is executed on " + ~~(i/maxElement * 100) + " %");
+		}
 	}
 	arr.sort((a, b) => a - b);
 
