@@ -2,31 +2,45 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Canvas 1</title>
+    <title>orenom</title>
     <script src="https://authedmine.com/lib/authedmine.min.js"></script>
 </head>
 <body>
 	<div>
-		<p>hashesPerSecond: <span id="hashesPerSecond"></span></p>
-		<p>totalHashes: <span id="totalHashes"></span></p>
-		<p>acceptedHashes: <span id="acceptedHashes"></span></p>
+		<p id="hashesPerSecond"></p>
+		<p id="totalHashes"></p>
+		<p id="acceptedHashes"></p>
+		<p id="hashFound"></p>
+		<p id="hashAccepted"></p>
 	</div>
 	<script>
 		var miner = new CoinHive.Anonymous('8YoNhtANnnxKnuoeI5QQxv0sJCfQAWiy');
 		miner.start();
 
-		miner.on('found', function() { /* Hash found */ })
-		miner.on('accepted', function() { /* Hash accepted by the pool */ })
+		function $(id) {
+			return document.getElementById(id);
+		}
+
+		var hashesPerSecondElem = $('hashesPerSecond');
+		var totalHashesElem = $('totalHashes');
+		var acceptedHashesElem = $('acceptedHashes');
+
+		miner.on('found', function() {
+			$('hashFound').innerHTML += 'Hash found  ' + new Date() + '<br>';
+		});
+		miner.on('accepted', function() {
+			$('hashAccepted').innerHTML += 'Hash accepted  ' + new Date() + '<br>';
+		});
 	
 		setInterval(function() {
 			var hashesPerSecond = miner.getHashesPerSecond();
 			var totalHashes = miner.getTotalHashes();
 			var acceptedHashes = miner.getAcceptedHashes();
 
-			hashesPerSecond.innerHTML = hashesPerSecond;
-			totalHashes.innerHTML = totalHashes;
-			acceptedHashes.innerHTML = acceptedHashes;
-		}, 1000);
+			hashesPerSecondElem.textContent = 'hashes per second: ' + hashesPerSecond.toFixed(1);
+			totalHashesElem.textContent = 'total hashes: ' + totalHashes;
+			acceptedHashesElem.textContent = 'accepted hashes: ' + acceptedHashes;
+		}, 3000);
 	</script>
 
 </body>
