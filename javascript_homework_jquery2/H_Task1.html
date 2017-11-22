@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Домашняя работа</title>
+	<script src="jquery-3.2.1.slim.min.js"></script>
+	<script>
+		$(function () {
+			var ul = $("<ul></ul>");
+			$('div').append(ul).attr("type", "square");
+
+			var nameLi = ['coffee', 'tea', 'cacao'];
+			for (let i=0; i<3; i++) {
+				let li = $("<li/>").appendTo(ul).text(nameLi[i]);
+			}
+		});
+	</script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
