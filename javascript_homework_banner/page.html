@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Создание баннера</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script>
+
+        $(function () {
+            $("button[data-url]").click(function () {
+                var img = $(this).data('url');
+                changeImage(img);
+            });
+
+            function changeImage(img) {
+                typeOfAnimation = $('input[type=radio]:checked')[0].value;
+                jQimg = $("img");
+                jQimg.attr("src", img);
+                switch(typeOfAnimation) {
+                    case 'fadeIn':
+                        $("img").hide();
+                        jQimg.fadeIn("slow");
+                        break;
+                    case 'slideDown':
+                        $("img").hide();
+                        jQimg.slideDown("slow");
+                        break;
+                    case 'animate':
+                        jQimg.css({"height": 0, "width": 0, "opacity": 0});
+                        jQimg.animate({height: "300px", width: "500px", opacity: 1}, {duration: 1500});
+                        break;
+                }
+
+            }
+
+            changeImage("html.jpg");   // effect on first opening
+        });
+
+    </script>
+</head>
+<body>
+    <div>
+        <img src="html.jpg" width="500" height="300" style="display: none;"/>
+        <br />
+        <button data-url="html.jpg">1</button>
+        <button data-url="html5.jpg">2</button>
+        <button data-url="jq.jpg">3</button>
+    </div>
+    <br />
+    <div>
+        <input type="radio" name="group1" value="fadeIn" checked> fade in<br />
+        <input type="radio" name="group1" value="slideDown"> slide down<br />
+        <input type="radio" name="group1" value="animate"> animate<br />
+    </div>
+</body>
+</html>
