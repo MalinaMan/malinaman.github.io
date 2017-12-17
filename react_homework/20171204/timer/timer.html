@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="./../../babel.min.js"></script>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    class Timer extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                seconds: 0,
+            }
+            this.clickHandlerStart   = this.clickHandlerStart.bind(this);
+            this.clickHandlerPause   = this.clickHandlerPause.bind(this);
+            this.clickHandlerResume  = this.clickHandlerResume.bind(this);
+        }
+
+        componentDidMount() {
+            this.runTimer();
+        }
+
+        componentWillUnmount() {
+            clearInterval(this.timerID);
+        }
+
+        runTimer() {
+			this.timerID = setInterval(()=>this.tick(), 1000);
+        }
+
+        tick() {
+            this.setState({
+                seconds: this.state.seconds + 1,
+            })
+        }
+
+        clickHandlerStart (e) {
+        	this.setState({
+                seconds: 0
+            });
+        	if (!this.timerID) {
+        		this.runTimer();
+        	}
+    	}
+    	
+    	clickHandlerPause (e) {
+        	clearInterval(this.timerID);
+        	this.timerID = null;
+    	}
+
+    	clickHandlerResume (e) {
+        	if (!this.timerID) {
+        		this.runTimer();
+        	}
+    	}
+
+
+        render(){
+            return(
+            	<div>
+                	<h1>Hello. You have been for {this.state.seconds} seconds on this page.</h1>
+                	<div style={{borderTop: "1px solid black", paddingTop: 10}}>
+						<button id="start" onClick={this.clickHandlerStart}>Start</button>
+						<button id="pause" onClick={this.clickHandlerPause}>Pause</button>
+						<button id="resume" onClick={this.clickHandlerResume}>Resume</button>
+					</div>
+				</div>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <Timer />,
+        document.getElementById("root")
+    )
+</script>
+
+</body>
+</html>

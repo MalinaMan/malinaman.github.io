@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test color</title>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
+	<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.1/react-dom.js"></script>
+    <script src="./../../babel.min.js"></script>
+
+    <style>
+    	div {background-color: red;}
+    	.my-block {background-color: blue;}
+    	.MyComponent {background-color: green;}
+    </style>
+</head>
+<body>
+	<div id='content'></div>
+
+	<script crossorigin type="text/babel">
+
+		var MyComponent = React.createClass({
+			render: function() {
+				var styles = {
+					backgroundColor: "pink"
+				};
+
+				return (
+					<div className="my-block" style={styles}>
+						<p> Hello there! </p>
+					</div>
+					);
+			}
+		});
+
+		ReactDOM.render(
+			<MyComponent />,
+			document.getElementById('content')
+		);
+	</script>
+</body>
+</html>
