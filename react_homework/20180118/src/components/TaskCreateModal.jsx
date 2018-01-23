@@ -8,16 +8,21 @@ export default class TaskCreateModal extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { text : '' };
+        this.state = { text : '', open: Boolean(this.props.isOpen) };
         this.handleClose = this.handleClose.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
     };
 
+    componentWillReceiveProps(nextProps) {
+    	this.setState({ open: Boolean(nextProps.isOpen) });
+    	return true;
+    };
+
     handleClose() {
         const { onClose } = this.props;
 
-        this.setState({ text: '' });
+        this.setState({ text: '' , open: false});
 
         if (onClose) {
             onClose();
@@ -44,7 +49,6 @@ export default class TaskCreateModal extends React.Component {
 
     render() {
         const { text } = this.state;
-        const { isOpen } = this.props;
 
         return (
             <Dialog
@@ -62,7 +66,7 @@ export default class TaskCreateModal extends React.Component {
                         onTouchTap={this.handleSubmit}
                     />
                 ]}
-                open={isOpen}
+                open={this.state.open}
                 onRequestClose={this.handleClose}
             >
                 <h3 className='TaskCreateModal__modal-title'>Add task</h3>

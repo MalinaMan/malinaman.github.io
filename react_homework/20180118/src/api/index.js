@@ -73,5 +73,16 @@ export default {
         return new Promise((resolve, reject) => {
             request.execute(resp => resolve(resp));
         });
+    },
+
+    deleteTask({ taskListId, taskId }) {
+        const request = gapi.client.tasks.tasks.delete({
+            tasklist : taskListId,
+            task     : taskId
+        });
+
+        return new Promise((resolve, reject) => {
+            request.execute(resp => resolve(resp));
+        });
     }
 }

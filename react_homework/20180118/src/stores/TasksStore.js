@@ -70,6 +70,14 @@ AppDispatcher.register(function(action) {
             break;
         }
 
+        case AppConstants.TASK_DELETE_SUCCESS: {
+        	const deleteTaskIndex = _tasks.findIndex(task => task.id === action.taskId);
+            _tasks.splice(deleteTaskIndex, 1);
+
+            TasksStore.emitChange();
+            break;
+        }
+
         default: {
         }
     }

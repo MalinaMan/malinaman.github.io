@@ -22,6 +22,7 @@ export default class Task extends React.Component {
         super(props);
         this.state = { isEditing: false };
         this.handleEdit = this.handleEdit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
         this.handleSave = this.handleSave.bind(this);
         this.handleCheck = this.handleCheck.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -56,13 +57,21 @@ export default class Task extends React.Component {
         }
     };
 
+    handleDelete() {
+        this.deleteTask();
+    };
+
     focusInput() {
         this.input.focus();
     };
 
     saveTask() {
         this.props.onUpdate({ text: this.input.value });
+        this.setState({ isEditing: false });
+    };
 
+    deleteTask() {
+        this.props.onDelete();
         this.setState({ isEditing: false });
     };
 
@@ -103,7 +112,7 @@ export default class Task extends React.Component {
 
                     <IconMenu iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}>
                         <MenuItem onClick={this.handleEdit}>Edit</MenuItem>
-                        <MenuItem>Delete</MenuItem>
+                        <MenuItem onClick={this.handleDelete}>Delete</MenuItem>
                     </IconMenu>
                 </div>
         );

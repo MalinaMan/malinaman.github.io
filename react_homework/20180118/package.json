@@ -5,7 +5,7 @@
   "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devserver": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8090 --host 127.0.0.1"
+    "devserver": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8090"
   },
   "author": "Author",
   "license": "ISC",
@@ -27,6 +27,7 @@
     "react-tap-event-plugin": "^3.0.2"
   },
   "devDependencies": {
+    "@types/gapi.client.tasks": "^1.0.0",
     "autoprefixer-loader": "^3.2.0",
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",

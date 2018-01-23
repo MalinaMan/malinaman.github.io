@@ -24,6 +24,7 @@ export default class TasksPage extends React.Component {
                        isCreatingTaskList: false };
         this.handleStatusChange = this.handleStatusChange.bind(this);
         this.handleTaskUpdate = this.handleTaskUpdate.bind(this);
+        this.handleTaskDelete = this.handleTaskDelete.bind(this);
         this.handleAddTask = this.handleAddTask.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.handleTaskSubmit = this.handleTaskSubmit.bind(this);
@@ -64,6 +65,13 @@ export default class TasksPage extends React.Component {
         });
     };
 
+    handleTaskDelete(taskId) {
+        TasksActions.deleteTask({
+            taskListId: this.props.params.id,
+            taskId: taskId
+        });
+    };
+
     handleAddTask() {
         this.setState({ isCreatingTask : true });
     };
@@ -101,6 +109,7 @@ export default class TasksPage extends React.Component {
                                 isCompleted={task.isCompleted}
                                 onStatusChange={this.handleStatusChange.bind(null, task.id)}
                                 onUpdate={this.handleTaskUpdate.bind(null, task.id)}
+                                onDelete={this.handleTaskDelete.bind(null, task.id)}
                             />
                         )
                     }

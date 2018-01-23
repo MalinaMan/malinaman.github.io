@@ -8,16 +8,21 @@ export default class TaskListCreateModal extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { name : '' };
+        this.state = { name: '', open: Boolean(this.props.isOpen) };
         this.handleClose = this.handleClose.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
     };
 
+    componentWillReceiveProps(nextProps) {
+    	this.setState({ open: Boolean(nextProps.isOpen) });
+    	return true;
+    };
+
     handleClose() {
         const { onClose } = this.props;
 
-        this.setState({ name: '' });
+        this.setState({ name: '', open: false });
 
         if (onClose) {
             onClose();
@@ -44,7 +49,6 @@ export default class TaskListCreateModal extends React.Component {
 
     render() {
         const { name } = this.state;
-        const { isOpen } = this.props;
 
         return (
             <Dialog
@@ -62,7 +66,7 @@ export default class TaskListCreateModal extends React.Component {
                         onTouchTap={this.handleSubmit}
                     />
                 ]}
-                open={isOpen}
+                open={this.state.open}
                 onRequestClose={this.handleClose}
             >
                 <h3 className='TaskListCreateModal__modal-title'>Add task list</h3>
