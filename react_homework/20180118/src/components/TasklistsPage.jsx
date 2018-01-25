@@ -90,6 +90,11 @@ export default class TasklistsPage extends React.Component {
                                         leftIcon={<FolderIcon />}
                                         primaryText={list.name}
                                         onClick={router.push.bind(null, `/lists/${list.id}`)}
+                                        style={
+                                            this.props.params.id === list.id ?
+                                                { backgroundColor: 'rgba(0,0,0,0.1)' } :
+                                                null
+                                        }
                                     />
                                 )
                             }
