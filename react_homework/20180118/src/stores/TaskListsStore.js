@@ -6,6 +6,7 @@ import AppConstants from '../constants/AppConstants';
 const CHANGE_EVENT = 'change';
 
 let _taskLists = [];
+let _taskList = null;
 let _error = null;
 
 function formatTaskList(data) {
@@ -18,6 +19,10 @@ function formatTaskList(data) {
 const TaskListsStore = Object.assign({}, EventEmitter.prototype, {
     getTaskLists() {
         return _taskLists;
+    },
+
+    getTaskList() {
+        return _taskList;
     },
 
     emitChange() {
@@ -59,6 +64,20 @@ AppDispatcher.register(function(action) {
         }
 
         case AppConstants.TASK_LIST_CREATE_FAIL: {
+            _error = action.error;
+
+            TaskListsStore.emitChange();
+            break;
+        }
+
+        case AppConstants.TASK_LIST_GET_SUCCESS: {
+            _taskList = action.item;
+
+            TaskListsStore.emitChange();
+            break;
+        }
+
+        case AppConstants.TASK_LIST_GET_FAIL: {
             _error = action.error;
 
             TaskListsStore.emitChange();

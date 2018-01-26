@@ -7,7 +7,6 @@ const TasksActions = {
     loadTasks(taskListId) {
         api.listTasks(taskListId)
         .then(data => {
-            //console.log(data);
             AppDispatcher.dispatch({
                 type  : AppConstants.TASKS_LOAD_SUCCESS,
                 items : data.items || []

@@ -31,6 +31,16 @@ export default {
         });
     },
 
+    getTaskList(taskListId) {
+        const request = gapi.client.tasks.tasklists.get( {
+        	tasklist: taskListId
+     	} );
+
+        return new Promise((resolve, reject) => {
+            request.execute(resp => resolve(resp));
+        });
+    },
+
     insertTaskList({ title }) {
         const request = gapi.client.tasks.tasklists.insert({
             title: title

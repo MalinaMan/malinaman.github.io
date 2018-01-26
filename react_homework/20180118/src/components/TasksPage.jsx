@@ -1,7 +1,10 @@
 import React from 'react';
 
 import TasksActions from '../actions/TasksActions';
+import TaskListsActions from '../actions/TaskListsActions';
+
 import TasksStore from '../stores/TasksStore';
+import TaskListsStore from '../stores/TaskListsStore';
 
 import IconButton from 'material-ui/IconButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
@@ -13,7 +16,8 @@ import './TasksPage.less';
 
 function getStateFromFlux() {
     return {
-        tasks: TasksStore.getTasks()
+        tasks: TasksStore.getTasks(),
+        currentTaskList: TaskListsStore.getTaskList()
     };
 }
 
@@ -33,20 +37,24 @@ export default class TasksPage extends React.Component {
 
     componentWillMount() {
         TasksActions.loadTasks(this.props.params.id);
+        TaskListsActions.getTask(this.props.params.id);
     };
 
     componentDidMount() {
         TasksStore.addChangeListener(this._onChange);
+        TaskListsStore.addChangeListener(this._onChange);
     };
 
     componentWillReceiveProps(nextProps) {
         if (this.props.params.id !== nextProps.params.id) {
             TasksActions.loadTasks(nextProps.params.id);
+            TaskListsActions.getTask(nextProps.params.id);
         }
     };
 
     componentWillUnmount() {
         TasksStore.removeChangeListener(this._onChange);
+        TaskListsStore.removeChangeListener(this._onChange);
     };
 
     handleStatusChange(taskId, { isCompleted }) {
@@ -73,11 +81,11 @@ export default class TasksPage extends React.Component {
     };
 
     handleAddTask() {
-        this.setState({ isCreatingTask : true });
+        this.setState({ isCreatingTask: true });
     };
 
     handleClose() {
-        this.setState({ isCreatingTask : false });
+        this.setState({ isCreatingTask: false });
     };
 
     handleTaskSubmit(task) {
@@ -85,14 +93,14 @@ export default class TasksPage extends React.Component {
 
         TasksActions.createTask({ taskListId, ...task });
 
-        this.setState({ isCreatingTask : false });
+        this.setState({ isCreatingTask: false });
     };
 
     render() {
-        return (
+    	return (
             <div className='TasksPage'>
                 <div className='TasksPage__header'>
-                    <h2 className='TasksPage__title'>List name</h2>
+                    <h2 className='TasksPage__title'>{ this.state.currentTaskList ? this.state.currentTaskList.title : "" }</h2>
                     <div className='TasksPage__tools'>
                         <IconButton onClick={this.handleAddTask}>
                             <ContentAdd />
