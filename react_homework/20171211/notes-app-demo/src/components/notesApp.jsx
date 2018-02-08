@@ -31,22 +31,22 @@ export default class NotesApp extends React.Component {
     }
 
     handleNoteAdd(newNote) {
-            let newNotes = this.state.notes.slice();
-            newNotes.unshift(newNote);
-            this.setState({
-                notes: newNotes,
-            });
-        }
+        let newNotes = this.state.notes.slice();
+        newNotes.unshift(newNote);
+        this.setState({
+            notes: newNotes,
+        });
+    }
 
     handleNoteDelete(note) {
-            let noteId = note.id;
-            let newNotes = this.state.notes.filter((note) => {
-                return note.id != noteId
-            });
-            this.setState({
-                notes: newNotes,
-            });
-        }
+        let noteId = note.id;
+        let newNotes = this.state.notes.filter((note) => {
+            return note.id != noteId
+        });
+        this.setState({
+            notes: newNotes,
+        });
+    }
 
     _updateLocalStorage() {
         let notes = JSON.stringify(this.state.notes);
