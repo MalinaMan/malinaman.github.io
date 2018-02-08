@@ -1,5 +1,5 @@
-//Please generate your own CLIENT_ID
-const CLIENT_ID = '257068551461-47qumvd8d8fb02da829bg26shpr5ujqb.apps.googleusercontent.com';
+import config from '../config';
+
 const SCOPES = ['https://www.googleapis.com/auth/tasks', 'https://www.googleapis.com/auth/plus.me'];
 
 export default {
@@ -7,7 +7,7 @@ export default {
         return new Promise((resolve, reject) => {
             gapi.auth.authorize(
                 {
-                    'client_id': CLIENT_ID,
+                    'client_id': config.clientId,
                     'scope': SCOPES,
                     'immediate': params.immediate,
                     'cookie_policy': 'single_host_origin'
